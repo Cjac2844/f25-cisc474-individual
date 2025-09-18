@@ -1,6 +1,7 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
+import Link from 'next/link';
 
 type Props = Omit<ImageProps, "src"> & {
     srcLight: string;
@@ -21,6 +22,18 @@ const ThemeImage = (props: Props) => {
 export default function Home() {
     return (
         <div className={styles.page}>
+            <nav className="bg-blue-600 text-white p-4">
+                <div className="container mx-auto flex justify-between">
+                    <h1 className="text-xl font-bold">Simple LMS</h1>
+                    <div className="space-x-4">
+                        <Link href="/" className="hover:underline">Home</Link>
+                        <Link href="/about" className="hover:underline">About</Link>
+                        <Link href="/courses" className="hover:underline">Courses</Link>
+                        <Link href="/submit" className="hover:underline">Submit</Link>
+                        <Link href="/contact" className="hover:underline">Contact</Link>
+                    </div>
+                </div>
+            </nav>
             <main className={styles.main}>
                 <h1>CISC474 Project Starter</h1>
                 <ol>
